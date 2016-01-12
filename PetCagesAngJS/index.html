@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Pet Shop Storage</title>
+    <link href="Content/bootstrap.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet" />    
+</head>
+<body ng-app="PetCages">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">Fred's Pet Storage</div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">        
+        <div class="panel panel-primary" ng-controller="PetCageListCtrl as petCageList">
+            <div class="panel-heading" style="font-size: large">
+                Pet Cages
+            </div>
+            <div class="cagesDiv">
+                <div class="row">
+                    <div class="col-sm-2 cageDiv" ng-repeat="cages in petCageList.cageList" ng-show="cages.CageNumber < 6"
+                         ng-style="{'background-image':cages.AnimalCount > 0 && cages.AnimalCount==cages.CountMax?'url(../images/CageFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount==(cages.CountMax / 2)?'url(../images/CageHalfFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount>(cages.CountMax / 2)?'url(../images/CageThreeQuartersFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount<(cages.CountMax / 2)?'url(../images/CageQuarterFull.png)':'',
+                                    'border-color':cages.Predator==true?'red':cages.NextToPredator?'darkred':'black'                                    
+                                   }">
+                        {{cages.CageNumber}}<br/>
+                        <b>{{cages.TypeOfAnimal}}</b><br/>
+                        count: {{cages.AnimalCount}}<br/>
+                        max: {{cages.CountMax}}
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 cageDiv" ng-repeat="cages in petCageList.cageList" ng-show="cages.CageNumber == 14"
+                         ng-style="{'background-image':cages.AnimalCount > 0 && cages.AnimalCount==cages.CountMax?'url(../images/CageFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount==(cages.CountMax / 2)?'url(../images/CageHalfFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount>(cages.CountMax / 2)?'url(../images/CageThreeQuartersFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount<(cages.CountMax / 2)?'url(../images/CageQuarterFull.png)':'',
+                                    'border-color':cages.Predator==true?'red':cages.NextToPredator?'darkred':'black'                                    
+                                   }">
+                        {{cages.CageNumber}}<br/>
+                        <b>{{cages.TypeOfAnimal}}</b><br/>
+                        count: {{cages.AnimalCount}}<br/>
+                        max: {{cages.CountMax}}
+                    </div>        
+                    <div class="col-sm-2 cageDiv cageHidden"></div>
+                    <div class="col-sm-2 cageDiv cageHidden"></div>
+                    <div class="col-sm-2 cageDiv cageHidden"></div>
+                    <div class="col-sm-2 cageDiv" ng-repeat="cages in petCageList.cageList" ng-show="cages.CageNumber == 6"
+                         ng-style="{'background-image':cages.AnimalCount > 0 && cages.AnimalCount==cages.CountMax?'url(../images/CageFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount==(cages.CountMax / 2)?'url(../images/CageHalfFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount>(cages.CountMax / 2)?'url(../images/CageThreeQuartersFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount<(cages.CountMax / 2)?'url(../images/CageQuarterFull.png)':'',
+                                    'border-color':cages.Predator==true?'red':cages.NextToPredator?'darkred':'black'                                    
+                                   }">
+                        {{cages.CageNumber}}<br/>
+                        <b>{{cages.TypeOfAnimal}}</b><br/>
+                        count: {{cages.AnimalCount}}<br/>
+                        max: {{cages.CountMax}}
+                    </div>        
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 cageDiv" ng-repeat="cages in petCageList.cageList" ng-show="cages.CageNumber == 13"
+                         ng-style="{'background-image':cages.AnimalCount > 0 && cages.AnimalCount==cages.CountMax?'url(../images/CageFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount==(cages.CountMax / 2)?'url(../images/CageHalfFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount>(cages.CountMax / 2)?'url(../images/CageThreeQuartersFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount<(cages.CountMax / 2)?'url(../images/CageQuarterFull.png)':'',
+                                    'border-color':cages.Predator==true?'red':cages.NextToPredator?'darkred':'black'                                    
+                                   }">
+                        {{cages.CageNumber}}<br/>
+                        <b>{{cages.TypeOfAnimal}}</b><br/>
+                        count: {{cages.AnimalCount}}<br/>
+                        max: {{cages.CountMax}}
+                    </div>        
+                    <div class="col-sm-2 cageDiv cageHidden"></div>
+                    <div class="col-sm-2 cageDiv cageHidden"></div>
+                    <div class="col-sm-2 cageDiv cageHidden"></div>
+                    <div class="col-sm-2 cageDiv" ng-repeat="cages in petCageList.cageList" ng-show="cages.CageNumber == 7"
+                         ng-style="{'background-image':cages.AnimalCount > 0 && cages.AnimalCount==cages.CountMax?'url(../images/CageFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount==(cages.CountMax / 2)?'url(../images/CageHalfFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount>(cages.CountMax / 2)?'url(../images/CageThreeQuartersFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount<(cages.CountMax / 2)?'url(../images/CageQuarterFull.png)':'',
+                                    'border-color':cages.Predator==true?'red':cages.NextToPredator?'darkred':'black'                                    
+                                   }">
+                        {{cages.CageNumber}}<br/>
+                        <b>{{cages.TypeOfAnimal}}</b><br/>
+                        count: {{cages.AnimalCount}}<br/>
+                        max: {{cages.CountMax}}
+                    </div>        
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 cageDiv" ng-repeat="cages in petCageList.cageList | orderBy:'':true" ng-show="cages.CageNumber >= 8 && cages.CageNumber <= 12"
+                         ng-style="{'background-image':cages.AnimalCount > 0 && cages.AnimalCount==cages.CountMax?'url(../images/CageFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount==(cages.CountMax / 2)?'url(../images/CageHalfFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount>(cages.CountMax / 2)?'url(../images/CageThreeQuartersFull.png)':
+                                                       cages.AnimalCount > 0 && cages.AnimalCount<(cages.CountMax / 2)?'url(../images/CageQuarterFull.png)':'',
+                                    'border-color':cages.Predator==true?'red':cages.NextToPredator?'darkred':'black'                                    
+                                   }">
+                        {{cages.CageNumber}}<br/>
+                        <b>{{cages.TypeOfAnimal}}</b><br/>
+                        count: {{cages.AnimalCount}}<br/>
+                        max: {{cages.CountMax}}
+                    </div>                    
+                </div>                
+            </div>
+        </div>
+    </div>
+    
+    <script src="scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    
+    <script src="common/common.services.js"></script>
+    <script src="common/cageResource.js"></script>
+
+    <script src="app/app.js"></script>
+
+    <script src="app/cages/PetCageListCtrl.js"></script>
+</body>
+</html>
